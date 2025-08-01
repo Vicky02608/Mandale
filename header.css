@@ -1,0 +1,140 @@
+/* Header container */
+.header {
+    background-color: #212121;
+    color: #ccc;
+    padding: 1rem 0; /* Vertical padding only, horizontal padding is handled by the inner container */
+}
+
+/* New container to center the content */
+.header-container {
+    max-width: 1200px; /* Maximum width of the content */
+    margin: 0 auto; /* Centers the container horizontally */
+    padding: 0 2rem; /* Adds horizontal padding inside the container */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Logo and brand name container */
+.header-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-logo {
+    width: 100px;
+    height: auto;
+    color: #ccc;
+    margin-bottom: 20px; /* Space between logo and brand name */
+}
+
+.header-brand-name {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Navigation menu container */
+.header-nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.header-nav-list a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.header-nav-list a:hover {
+    color: #fff;
+}
+
+/* Icons container */
+.header-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-icons a {
+    color: #ccc;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #fff;
+}
+
+/* Hamburger menu for mobile */
+.hamburger-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ccc;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 900px) {
+    /* Adjust padding on the inner container for smaller screens */
+    .header-container {
+        padding: 0 1rem;
+        /* The flex properties for the container are still active, but the child elements are reordered */
+    }
+    
+    .header-logo-container {
+        order: 1;
+    }
+
+    .header-nav {
+        order: 3;
+        flex-basis: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .header-nav.active {
+        max-height: 500px;
+    }
+
+    .header-nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+
+    .header-nav-list a {
+        font-size: 1.1rem;
+    }
+
+    .header-icons {
+        order: 2;
+        gap: 1rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+        order: 4;
+    }
+}

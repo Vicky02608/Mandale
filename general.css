@@ -1,0 +1,337 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header container */
+.header {
+    background-color: #212121;
+    color: #ccc;
+    padding: 1rem 0;
+}
+
+/* New container to center the content */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Logo and brand name container */
+.header-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-logo {
+    width: 100px;
+    height: auto;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.header-brand-name {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Navigation menu container */
+.header-nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.header-nav-list a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.header-nav-list a:hover {
+    color: #fff;
+}
+
+/* Icons container */
+.header-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-icons a {
+    color: #ccc;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #fff;
+}
+
+/* Hamburger menu for mobile */
+.hamburger-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ccc;
+}
+
+/* New CSS for the product section */
+.product-section {
+    background-color: #f7f3f0;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-content-wrapper {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.product-text-content {
+    flex: 1;
+    text-align: left;
+    max-width: 500px;
+}
+
+.product-heading {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.shop-now-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #f2e7da;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: #e0d0c0;
+}
+
+.product-arrows {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: #666;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: #e0e0e0;
+}
+
+.product-image-container {
+    position: relative;
+    width: 50%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1.3;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    
+    /* Using an SVG mask for the hexagonal pattern */
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="white"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="white"/></svg>');
+    
+    -webkit-mask-size: 25px 25px; /* Adjust size of hexagons */
+    mask-size: 25px 25px; /* Adjust size of hexagons */
+    
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    
+    background-color: transparent;
+    mix-blend-mode: multiply; /* Blends the overlay with the image */
+}
+
+/* Mind, Body & Soul section */
+.mind-body-soul-section {
+    padding: 4rem 2rem;
+    background-color: #f7f3f0; /* Same as the product section */
+    text-align: center;
+}
+
+.mind-body-soul-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mind-body-soul-heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.mind-body-soul-heading::before,
+.mind-body-soul-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 50px;
+    height: 1px;
+    background-color: #000;
+}
+
+.mind-body-soul-heading::before {
+    left: 50%;
+    transform: translateX(-60px);
+}
+
+.mind-body-soul-heading::after {
+    left: 50%;
+    transform: translateX(10px);
+}
+
+.mind-body-soul-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 900px) {
+    /* Adjust padding on the inner container for smaller screens */
+    .header-container {
+        padding: 0 1rem;
+    }
+    
+    .header-logo-container {
+        order: 1;
+    }
+
+    .header-nav {
+        order: 3;
+        flex-basis: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .header-nav.active {
+        max-height: 500px;
+    }
+
+    .header-nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+
+    .header-nav-list a {
+        font-size: 1.1rem;
+    }
+
+    .header-icons {
+        order: 2;
+        gap: 1rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+        order: 4;
+    }
+    
+    /* Product section responsiveness */
+    .product-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .product-text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .product-heading {
+        font-size: 2.5rem;
+    }
+    
+    .product-image-container {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .product-arrows {
+        justify-content: center;
+    }
+    
+    .mind-body-soul-heading::before,
+    .mind-body-soul-heading::after {
+        display: none;
+    }
+}
