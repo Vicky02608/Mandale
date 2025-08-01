@@ -11,6 +11,41 @@
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const arrowIcon = item.querySelector('.arrow-icon');
+
+                // Toggle the 'active' class on click
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all other items
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            const otherArrow = otherItem.querySelector('.arrow-icon');
+                            otherArrow.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle the current item's active state
+                    item.classList.toggle('active');
+                    if (isActive) {
+                        arrowIcon.style.transform = 'rotate(0deg)';
+                    } else {
+                        arrowIcon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -39,39 +74,200 @@
     </header>
 
     <main>
-       <section class="product-section">
-        <div class="product-content-wrapper">
-            <div class="product-text-content">
-                <h1 class="product-heading">Aura Enhancer<br>Body Wash</h1>
-                <p class="product-description">
-                    Aura Enhancer Body Wash is more than just a cleansing product. It's a daily self-care ritual
-                    designed to nourish your skin and uplift your spirit. Infused with natural ingredients like
-                    sandalwood, saffron, rose, turmeric, and lavender, it gently cleanses while providing deep
-                    hydration and nourishment.
-                </p>
-                <a href="#" class="shop-now-btn">SHOP NOW</a>
-                <div class="product-arrows">
-                    <div class="arrow"><i class="fas fa-arrow-left"></i></div>
-                    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+        <section class="product-section">
+
+            <!-- Section Title -->
+            <h1 class="section-title">
+                Featured Products
+            </h1>
+
+            <!-- Product Cards Container -->
+            <div class="product-container">
+
+                <!-- First Product Card -->
+                <div class="product-card">
+                    <!-- Product Image -->
+                    <img src="./assets/product-1.jpg" alt="Aura Enhancer Bodywash" class="card-image" />
+
+                    <!-- Product Name -->
+                    <h2 class="card-title">
+                        Aura Enhancer Bodywash
+                    </h2>
+
+                    <!-- Product Description -->
+                    <p class="card-description">
+                        Helps balance mood and energy with aroma-therapy inspired by ancient Vedic rituals. Infused with
+                        natural oils, botanicals, and intention.
+                    </p>
+
+                    <!-- Call-to-action Button -->
+                    <div class="cta-button-container">
+                        <button class="cta-button">
+                            GET FOR YOURSELF
+                        </button>
+                    </div>
                 </div>
+
+                <!-- Second Product Card -->
+                <div class="product-card">
+                    <!-- Product Image -->
+                    <img src="./assets/product-2.jpg" alt="Crystal Body Oil" class="card-image" />
+
+                    <!-- Product Name -->
+                    <h2 class="card-title">
+                        Crystal Body Oil
+                    </h2>
+
+                    <!-- Product Description -->
+                    <p class="card-description">
+                        It deeply hydrates and softens the skin, leaving it smooth, glowing, and lightly scented.
+                        Infused with healing crystals and nourishing oils.
+                    </p>
+
+                    <!-- Call-to-action Button -->
+                    <div class="cta-button-container">
+                        <button class="cta-button">
+                            GET FOR YOURSELF
+                        </button>
+                    </div>
+                </div>
+
             </div>
-            <div class="product-image-container">
-                <img src="./assets/slider-1.jpg"
-                    alt="Aura Enhancer Body Wash" class="product-image">
+
+        </section>
+
+        <div class="banner-container">
+            <div class="text-content">
+                <!-- Main headline -->
+                <h1 class="main-title">
+                    <span class="highlight">India's First</span> Luxury Wellness Brand Rooted in<br>
+                    Astrology & Aura Enhancement
+                </h1>
+                <!-- Sub-headline -->
+                <p class="sub-title">
+                    Where ancient spiritual science meets modern sensory rituals.
+                </p>
             </div>
         </div>
-    </section>
+        <div class="review-container">
 
-        <section class="mind-body-soul-section">
-            <div class="mind-body-soul-content">
-                <h2 class="mind-body-soul-heading">Mind, Body & Soul care routine</h2>
-                <p class="mind-body-soul-description">
-                    Astrology is not just about stars and planets, it also encompasses various rituals and practices
-                    believed to harness the cosmic energy for our benefit. One such practice involves specific
-                    ingredients to your bath routine.
-                </p>
-            </div>
-        </section>
+            <section class="commitments-section">
+                <h2 class="main-heading">Thoughtful Committements</h2>
+
+                <div class="commitments-grid">
+                    <div class="commitment-item">
+                        <!-- Corrected Vegan Icon (SVG) -->
+                        <img src="./assets/a.png" alt="Vegan Icon" class="commitment-icon">
+                        <p class="commitment-title">100% Vegan</p>
+                        <p>Supports sustainability and animal welfare.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <!-- Corrected IFRA Certified Icon (SVG) -->
+                        <img src="./assets/b.png" alt="Vegan Icon" class="commitment-icon">
+
+                        <h4>IFRA Certified Fragrances</h4>
+                        <p>Brings safe, luxurious aroma without compromise.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <!-- Corrected Clean Formulation Icon (SVG) -->
+                        <img src="./assets/c.png" alt="Vegan Icon" class="commitment-icon">
+
+                        <h4>Clean Formulation</h4>
+                        <p>Made with safe, non-toxic, and skin-friendly ingredients.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <!-- Corrected Made In India Icon (SVG) -->
+                        <img src="./assets/d.png" alt="Vegan Icon" class="commitment-icon">
+
+                        <h4>Made In India</h4>
+                        <p>A land of timeless traditions and vibrant cultures.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <!-- Corrected 100% Naturally Derived Extracts Icon (SVG) -->
+                        <img src="./assets/e.png" alt="Vegan Icon" class="commitment-icon">
+                        <h4>100% Naturally Derived Extracts</h4>
+                        <p>Made from pure plant, fruit, and botanical sources.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Reviews/Testimonials Section -->
+            <section class="reviews-section">
+                <p class="pre-heading">Reviews</p>
+                <h2 class="main-heading">Testimonials</h2>
+
+                <div class="reviews-carousel">
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <div>
+                            <div class="stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                            </div>
+                            <p class="review-text">
+                                I had the most amazing experience with my skincare expert! She instantly understood my
+                                skin
+                                concerns and created a routine that was simple, effective, and tailored just for me.
+                                Within
+                                a few weeks, I noticed a visible difference—my skin looked clearer, brighter.
+                            </p>
+                        </div>
+                        <div class="reviewer-info">
+                            <p class="name">Kailani Wilcox</p>
+                            <p class="title">Skin Expert</p>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <div>
+                            <div class="stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="review-text">
+                                A spa therapist is a wellness professional trained to provide relaxing and therapeutic
+                                treatments that nourish both the body and mind. Using techniques like massages, facials,
+                                body scrubs, and aromatherapy, they help relieve stress, ease muscle tension.
+                            </p>
+                        </div>
+                        <div class="reviewer-info">
+                            <p class="name">Nelson Duke</p>
+                            <p class="title">Spa Therapist</p>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <div>
+                            <div class="stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                            </div>
+                            <p class="review-text">
+                                I never knew how much a personalized skincare routine could transform my skin until I
+                                worked
+                                with my skincare coach. She took the time to understand my skin type, lifestyle, and
+                                concerns before recommending products and rituals that actually worked for me.
+                            </p>
+                        </div>
+                        <div class="reviewer-info">
+                            <p class="name">Dorian Carey</p>
+                            <p class="title">Skincare Coach</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </section>
+
+        </div>
+
+
+        
+     
+
 
     </main>
 
