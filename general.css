@@ -1,411 +1,370 @@
- body {
-     font-family: 'Inter', sans-serif;
-     background-color: #f7f3f0;
-     /* A light, off-white background */
-     margin: 0;
- }
-
- /* Main Section Container */
- .product-section {
-     max-width: 1280px;
-     margin: 0 auto;
-     padding: 3rem 1rem;
- }
-
- /* Section Title */
- .section-title {
-     font-family: 'Gazpacho';
-     font-size: 30px;
-     text-align: center;
-     margin-bottom: 1rem;
-     font-weight: 500;
-     color: #1a202c;
-     /* A dark gray for text */
- }
-
- /* Product Cards Container */
- .product-container {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     /* background-color: red; */
- }
-
- /* Media query for medium screens and above */
- @media (min-width: 768px) {
-     .product-container {
-         flex-direction: row;
-         gap: 12rem;
-     }
- }
-
- /* Individual Product Card */
- .product-card {
-     background-color: #ffffff;
-     border-radius: 1rem;
-     overflow: hidden;
-     max-width: 24rem;
-     /* 384px */
-     width: 100%;
-     transition: transform 0.3s ease-in-out;
-     padding: 1.5rem;
-
- }
-
- .product-card:hover {
-     transform: scale(1.05);
-
- }
-
- /* Card Image */
- .card-image {
-     width: 100%;
-     height: 384px;
-     border-radius: 0.5rem;
-     margin-bottom: 1rem;
-     object-fit: cover;
- }
-
- /* Card Title */
- .card-title {
-     font-size: 1.5rem;
-     font-weight: 500;
-     color: #B8860A;
-     margin-bottom: 0.5rem;
-     text-align: center;
-     font-family: 'Gazpacho';
- }
-
- /* Card Description */
- .card-description {
-     font-size: 1rem;
-     color: #666666;
-     margin-bottom: 1rem;
-     text-align: center;
-     font-weight: 400;
-     font-family: 'Arial';
-
- }
-
- /* Call-to-action Button */
- .cta-button-container {
-     text-align: center;
- }
-
- .cta-button {
-     background-color: #B8860A;
-     color: #ffffff;
-     font-weight: 600;
-     padding: 0.75rem 1.5rem;
-     border: none;
-     cursor: pointer;
-     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-     transition: background-color 0.3s;
-     font-size: 0.875rem;
- }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f3f0;
+    /* A light, off-white background */
+    margin: 0;
+}
+
+/* Main Section Container */
+.product-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Gazpacho';
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #1a202c;
+    /* A dark gray for text */
+}
+
+/* Product Cards Container */
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media query for medium screens and above */
+@media (min-width: 768px) {
+    .product-container {
+        flex-direction: row;
+        gap: 12rem;
+    }
+}
+
+/* Individual Product Card */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: 24rem;
+    /* 384px */
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    padding: 1.5rem;
+
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+
+}
+
+/* Card Image */
+.card-image {
+    width: 100%;
+    height: 384px;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #B8860A;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: 'Gazpacho';
+}
+
+/* Card Description */
+.card-description {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Arial';
+}
+
+/* Call-to-action Button */
+.cta-button-container {
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #B8860A;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    font-size: 0.875rem;
+}
+
+.cta-button:hover {
+    background-color: #a88a2a;
+}
+
+.cta-button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(192, 154, 48, 0.5);
+}
+
+.banner-container {
+    /* Mimicking the background texture from the image */
+    background-color: #f5f5dc;
+    /* A light beige/cream color */
+    background-image: url("./assets/banner-bg-1.jpg");
+    /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    /* Responsive padding */
+    min-height: 280px;
+}
+
+.text-content {
+    max-width: 900px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #000000;
+    /* Dark grey color */
+}
+
+.main-title .highlight {
+    color: #B8860A;
+    /* Gold/brown highlight color */
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    color: #000000;
+    /* Lighter grey for subtitle */
+    margin-top: 1rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .banner-container {
+        padding: 2rem 1rem;
+    }
+
+    .main-title {
+        font-size: 1.75rem;
+    }
+
+    .sub-title {
+        font-size: 1rem;
+    }
+}
+
+.review-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+
+/* --- Thoughtful Commitments Section Styles --- */
+.commitments-section {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 4rem;
+}
+
+.commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.commitment-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.commitment-item:hover {
+    transform: translateY(-5px);
+}
+
+.commitment-item svg {
+    width: 80px;
+    height: 80px;
+    stroke: #c8a379;
+    /* Golden color from image */
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-bottom: 1rem;
+}
+
+.commitment-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #55331e;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.commitment-item p {
+    font-size: 0.875rem;
+    color: #777;
+}
+
+.commitment-title {
+    color: #B8860A;
+}
+
+/* --- Reviews/Testimonials Section Styles --- */
+.reviews-section {
+    padding: 2rem 0;
+    background-color: #fcfbf8;
+}
+
+.reviews-section .pre-heading {
+    font-family: 'Inter', sans-serif;
+    color: #c8a379;
+    /* Golden color from image */
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.reviews-section .main-heading {
+    margin-top: 0.5rem;
+    font-family: 'Gazpacho';
+}
+
+.reviews-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-card {
+    background-color: #fff;
+    padding: 2.5rem;
+    text-align: left;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    /* Ensure cards have the same height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stars {
+    color: #e5b300;
+    /* Star color */
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.reviewer-info {
+    margin-top: auto;
+    /* Push to the bottom */
+}
+
+.reviewer-info .name {
+    font-weight: 600;
+    color: #55331e;
+    margin-bottom: 0.25rem;
+}
+
+.reviewer-info .title {
+    font-size: 0.875rem;
+    color: #777;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #e0d8cf;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.dot.active {
+    background-color: #c8a379;
+}
+
+/* --- Responsive design for smaller screens --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .commitments-section {
+        padding: 2rem 1rem;
+    }
+
+    .commitments-grid,
+    .reviews-carousel {
+        grid-template-columns: 1fr;
+    }
+
+    .review-card {
+        text-align: center;
+    }
+
+    .reviewer-info {
+        text-align: center;
+    }
+}
 
- .cta-button:hover {
-     background-color: #a88a2a;
- }
-
- .cta-button:focus {
-     outline: 2px solid transparent;
-     outline-offset: 2px;
-     box-shadow: 0 0 0 2px rgba(192, 154, 48, 0.5);
- }
-
-
-
-
-
-
-
-
-
-
-
-
- .banner-container {
-     /* Mimicking the background texture from the image */
-     background-color: #f5f5dc;
-     /* A light beige/cream color */
-     background-image: url("./assets/banner-bg-1.jpg");
-     /* Replace with your image path */
-     background-size: cover;
-     background-position: center;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     text-align: center;
-     padding: 4rem 1rem;
-     /* Responsive padding */
-     min-height: 280px;
- }
-
- .text-content {
-     max-width: 900px;
- }
-
- .main-title {
-     font-size: 2.5rem;
-     line-height: 1.2;
-     font-weight: 500;
-     color: #000000;
-     /* Dark grey color */
- }
-
- .main-title .highlight {
-     color: #B8860A;
-     /* Gold/brown highlight color */
- }
-
- .sub-title {
-     font-size: 1.1rem;
-     color: #000000;
-     /* Lighter grey for subtitle */
-     margin-top: 1rem;
- }
-
- /* Responsive adjustments for smaller screens */
- @media (max-width: 768px) {
-     .banner-container {
-         padding: 2rem 1rem;
-     }
-
-     .main-title {
-         font-size: 1.75rem;
-     }
-
-     .sub-title {
-         font-size: 1rem;
-     }
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- .review-container {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 4rem 1.5rem;
-     text-align: center;
- }
-
-
- /* --- Thoughtful Commitments Section Styles --- */
- .commitments-section {
-     background-color: #fff;
-     padding: 4rem 2rem;
-     border-radius: 12px;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-     margin-bottom: 4rem;
- }
-
- .commitments-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     gap: 2rem;
-     margin-top: 2rem;
- }
-
- .commitment-item {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     text-align: center;
-     padding: 1.5rem;
-     transition: transform 0.2s ease-in-out;
- }
-
- .commitment-item:hover {
-     transform: translateY(-5px);
- }
-
- .commitment-item svg {
-     width: 80px;
-     height: 80px;
-     stroke: #c8a379;
-     /* Golden color from image */
-     fill: none;
-     stroke-width: 1.5;
-     stroke-linecap: round;
-     stroke-linejoin: round;
-     margin-bottom: 1rem;
- }
-
- .commitment-item h4 {
-     font-size: 1.125rem;
-     font-weight: 600;
-     color: #55331e;
-     margin-top: 0;
-     margin-bottom: 0.5rem;
- }
-
- .commitment-item p {
-     font-size: 0.875rem;
-     color: #777;
- }
-
- .commitment-title {
-     color: #B8860A;
- }
-
- /* --- Reviews/Testimonials Section Styles --- */
- .reviews-section {
-     padding: 2rem 0;
-     background-color: #fcfbf8;
- }
-
- .reviews-section .pre-heading {
-     font-family: 'Inter', sans-serif;
-     color: #c8a379;
-     /* Golden color from image */
-     font-weight: 500;
-     letter-spacing: 2px;
-     text-transform: uppercase;
-     font-size: 1rem;
-     margin-bottom: 0;
- }
-
- .reviews-section .main-heading {
-     margin-top: 0.5rem;
-     font-family: 'Gazpacho';
- }
-
- .reviews-carousel {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-     gap: 2rem;
-     margin-top: 2rem;
-     align-items: center;
-     justify-content: center;
- }
-
- .review-card {
-     background-color: #fff;
-     padding: 2.5rem;
-     text-align: left;
-     border-radius: 12px;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-     height: 100%;
-     /* Ensure cards have the same height */
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
- }
-
- .stars {
-     color: #e5b300;
-     /* Star color */
-     font-size: 1.25rem;
-     margin-bottom: 1rem;
-     letter-spacing: 2px;
-     
- }
-
- .review-text {
-     font-size: 1rem;
-     font-style: italic;
-     color: #444;
-     margin-bottom: 1.5rem;
- }
-
- .reviewer-info {
-     margin-top: auto;
-     /* Push to the bottom */
- }
-
- .reviewer-info .name {
-     font-weight: 600;
-     color: #55331e;
-     margin-bottom: 0.25rem;
- }
-
- .reviewer-info .title {
-     font-size: 0.875rem;
-     color: #777;
- }
-
- .carousel-dots {
-     display: flex;
-     justify-content: center;
-     gap: 0.75rem;
-     margin-top: 2rem;
- }
-
- .dot {
-     width: 10px;
-     height: 10px;
-     background-color: #e0d8cf;
-     border-radius: 50%;
-     cursor: pointer;
-     transition: background-color 0.2s ease-in-out;
- }
-
- .dot.active {
-     background-color: #c8a379;
- }
-
- /* --- Responsive design for smaller screens --- */
- @media (max-width: 768px) {
-     .container {
-         padding: 2rem 1rem;
-     }
-
-     .commitments-section {
-         padding: 2rem 1rem;
-     }
-
-     .commitments-grid,
-     .reviews-carousel {
-         grid-template-columns: 1fr;
-     }
-
-     .review-card {
-         text-align: center;
-     }
-
-     .reviewer-info {
-         text-align: center;
-     }
- }
-
-
-
-
- 
 /* Main container for the FAQ section */
 .faq-container {
-    max-width: 1200px;
+    max-width: 800px;
     width: 100%;
-    background-color: red;
+    /* No need for background-color: red; */
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    justify-content: center;
-    align-items: center;
+    /* Corrected to center the container */
+    margin: 0 auto;
 }
 
 /* Header styling */
@@ -415,18 +374,22 @@
 }
 
 .faq-title {
-    color: #a38d70; /* Light orange/brown color from the image */
-    font-size: 1rem;
-    font-weight: 600;
+    color: #B8860A;
+    /* Light orange/brown color from the image */
+    font-size: 24px;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
+        font-family: 'Arial';
+
     margin-bottom: 10px;
 }
 
 .faq-subtitle {
     color: #1a1a1a;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 30px;
+    font-family: 'Gazpacho';
+    font-weight: 500;
     margin: 0;
     line-height: 1.2;
 }
@@ -450,22 +413,23 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    font-size: 1.1rem;
+    font-size: 18px;
     font-weight: 600;
     color: #4a4a4a;
     text-align: left;
     background: none;
     border: none;
+    font-family: 'Montserrat';
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .accordion-header:hover {
-    color: #a38d70;
+    color: #B8860A;
 }
 
 .accordion-item.active .accordion-header {
-    color: #a38d70;
+    color: #B8860A;
 }
 
 /* Arrow icon styling */
@@ -485,18 +449,19 @@
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    padding: 0 0 0 0;
+    padding: 0;
     transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
 .accordion-item.active .accordion-content {
-    max-height: 200px; /* A sufficient value for the content */
+    max-height: 500px;
+    /* Increased for more flexible content */
     padding: 0 0 20px 0;
 }
 
 .accordion-content p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.6;
     color: #757575;
 }
@@ -506,13 +471,16 @@
     .faq-container {
         padding: 20px;
     }
+
     .faq-subtitle {
         font-size: 1.8rem;
     }
+
     .accordion-header {
         font-size: 1rem;
         padding: 15px 0;
     }
+
     .accordion-content p {
         font-size: 0.9rem;
     }

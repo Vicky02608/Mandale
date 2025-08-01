@@ -12,16 +12,24 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
 
+    <style>
+        .accordion-item .accordion-header .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-header .arrow-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const accordionItems = document.querySelectorAll('.accordion-item');
 
             accordionItems.forEach(item => {
                 const header = item.querySelector('.accordion-header');
-                const content = item.querySelector('.accordion-content');
                 const arrowIcon = item.querySelector('.arrow-icon');
 
-                // Toggle the 'active' class on click
                 header.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
 
@@ -34,12 +42,12 @@
                         }
                     });
 
-                    // Toggle the current item's active state
+                    // Toggle the current item's active state and rotate the arrow
                     item.classList.toggle('active');
-                    if (isActive) {
-                        arrowIcon.style.transform = 'rotate(0deg)';
-                    } else {
+                    if (item.classList.contains('active')) {
                         arrowIcon.style.transform = 'rotate(180deg)';
+                    } else {
+                        arrowIcon.style.transform = 'rotate(0deg)';
                     }
                 });
             });
@@ -76,31 +84,24 @@
     <main>
         <section class="product-section">
 
-            <!-- Section Title -->
             <h1 class="section-title">
                 Featured Products
             </h1>
 
-            <!-- Product Cards Container -->
             <div class="product-container">
 
-                <!-- First Product Card -->
                 <div class="product-card">
-                    <!-- Product Image -->
                     <img src="./assets/product-1.jpg" alt="Aura Enhancer Bodywash" class="card-image" />
 
-                    <!-- Product Name -->
                     <h2 class="card-title">
                         Aura Enhancer Bodywash
                     </h2>
 
-                    <!-- Product Description -->
                     <p class="card-description">
                         Helps balance mood and energy with aroma-therapy inspired by ancient Vedic rituals. Infused with
                         natural oils, botanicals, and intention.
                     </p>
 
-                    <!-- Call-to-action Button -->
                     <div class="cta-button-container">
                         <button class="cta-button">
                             GET FOR YOURSELF
@@ -108,23 +109,18 @@
                     </div>
                 </div>
 
-                <!-- Second Product Card -->
                 <div class="product-card">
-                    <!-- Product Image -->
                     <img src="./assets/product-2.jpg" alt="Crystal Body Oil" class="card-image" />
 
-                    <!-- Product Name -->
                     <h2 class="card-title">
                         Crystal Body Oil
                     </h2>
 
-                    <!-- Product Description -->
                     <p class="card-description">
                         It deeply hydrates and softens the skin, leaving it smooth, glowing, and lightly scented.
                         Infused with healing crystals and nourishing oils.
                     </p>
 
-                    <!-- Call-to-action Button -->
                     <div class="cta-button-container">
                         <button class="cta-button">
                             GET FOR YOURSELF
@@ -138,12 +134,10 @@
 
         <div class="banner-container">
             <div class="text-content">
-                <!-- Main headline -->
                 <h1 class="main-title">
                     <span class="highlight">India's First</span> Luxury Wellness Brand Rooted in<br>
                     Astrology & Aura Enhancement
                 </h1>
-                <!-- Sub-headline -->
                 <p class="sub-title">
                     Where ancient spiritual science meets modern sensory rituals.
                 </p>
@@ -156,34 +150,29 @@
 
                 <div class="commitments-grid">
                     <div class="commitment-item">
-                        <!-- Corrected Vegan Icon (SVG) -->
                         <img src="./assets/a.png" alt="Vegan Icon" class="commitment-icon">
                         <p class="commitment-title">100% Vegan</p>
                         <p>Supports sustainability and animal welfare.</p>
                     </div>
                     <div class="commitment-item">
-                        <!-- Corrected IFRA Certified Icon (SVG) -->
                         <img src="./assets/b.png" alt="Vegan Icon" class="commitment-icon">
 
                         <h4>IFRA Certified Fragrances</h4>
                         <p>Brings safe, luxurious aroma without compromise.</p>
                     </div>
                     <div class="commitment-item">
-                        <!-- Corrected Clean Formulation Icon (SVG) -->
                         <img src="./assets/c.png" alt="Vegan Icon" class="commitment-icon">
 
                         <h4>Clean Formulation</h4>
                         <p>Made with safe, non-toxic, and skin-friendly ingredients.</p>
                     </div>
                     <div class="commitment-item">
-                        <!-- Corrected Made In India Icon (SVG) -->
                         <img src="./assets/d.png" alt="Vegan Icon" class="commitment-icon">
 
                         <h4>Made In India</h4>
                         <p>A land of timeless traditions and vibrant cultures.</p>
                     </div>
                     <div class="commitment-item">
-                        <!-- Corrected 100% Naturally Derived Extracts Icon (SVG) -->
                         <img src="./assets/e.png" alt="Vegan Icon" class="commitment-icon">
                         <h4>100% Naturally Derived Extracts</h4>
                         <p>Made from pure plant, fruit, and botanical sources.</p>
@@ -192,13 +181,11 @@
             </section>
 
 
-            <!-- Reviews/Testimonials Section -->
             <section class="reviews-section">
                 <p class="pre-heading">Reviews</p>
                 <h2 class="main-heading">Testimonials</h2>
 
                 <div class="reviews-carousel">
-                    <!-- Review Card 1 -->
                     <div class="review-card">
                         <div>
                             <div class="stars">
@@ -218,7 +205,6 @@
                         </div>
                     </div>
 
-                    <!-- Review Card 2 -->
                     <div class="review-card">
                         <div>
                             <div class="stars">
@@ -236,7 +222,6 @@
                         </div>
                     </div>
 
-                    <!-- Review Card 3 -->
                     <div class="review-card">
                         <div>
                             <div class="stars">
@@ -266,7 +251,105 @@
 
 
         
-     
+        <div class="faq-container">
+            <header class="faq-header">
+                <h3 class="faq-title">FAQ's</h3>
+                <h1 class="faq-subtitle">Your Questions. Answered.</h1>
+            </header>
+
+            <section class="accordion">
+                <div class="accordion-item active">
+                    <button class="accordion-header">
+                        What makes Mandale different from other shower gels?
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 15L12 9L18 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Mandale combines skincare with emotional wellness, offering a 7-day ritual system that aligns
+                            your energy needs with natural, luxurious ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What are Mandale Aura Enhancers?
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Mandale Aura Enhancers are a curated collection of essential oils and botanical extracts
+                            designed to elevate your daily shower routine, promoting a sense of calm, focus, or energy
+                            depending on the blend.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How do I choose the right Aura Enhancer for me?
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Consider what you want to achieve with your shower ritual. If you want to relax, choose a
+                            blend with lavender. For an energizing boost, look for citrus-based enhancers.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Are your products made with natural ingredients?
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, all of our products are crafted with a commitment to using natural, ethically-sourced
+                            ingredients and are free from harsh chemicals and artificial additives.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Do your body washes contain artificial fragrances?
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>No, we use only natural essential oils to scent our products, ensuring a pure and authentic
+                            aromatic experience.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Are your products suitable for all skin types?
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Our formulas are created to be gentle and effective for a wide range of skin types, including
+                            sensitive skin. However, we always recommend a patch test if you have specific
+                            sensitivities.</p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+
+
+        
 
 
     </main>
