@@ -25,7 +25,7 @@
 }
 
 .header-logo {
-    width: 100px;
+    width: 110px;
     height: auto;
     color: #ccc;
     margin-bottom: 20px; /* Space between logo and brand name */
@@ -50,14 +50,14 @@
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
 .header-nav-list a {
-    color: #ccc;
+    color: #fae9d0;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     padding: 0.5rem 0;
     transition: color 0.3s ease;

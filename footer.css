@@ -84,10 +84,12 @@
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
+
 .footer-links ul {
     list-style: none;
     padding: 0;
-    text-align: center; /* Correctly centers the list items horizontally */
+    text-align: center;
+    /* Correctly centers the list items horizontally */
 }
 
 .footer-links li {
@@ -118,15 +120,16 @@
     padding: 0.75rem 1rem;
     flex-grow: 1;
     color: #ccc;
+    border-radius: 0.5rem;
 }
 
 .subscribe-form button {
     background-color: #deb887;
     color: #212121;
-    border: none;
     padding: 0.75rem 1.5rem;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 0.5rem;
     transition: background-color 0.3s;
 }
 
