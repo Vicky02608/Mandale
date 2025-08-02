@@ -22,41 +22,30 @@
         }
     </style>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const accordionItems = document.querySelectorAll('.accordion-item');
 
-            accordionItems.forEach(item => {
-                const header = item.querySelector('.accordion-header');
-                const arrowIcon = item.querySelector('.arrow-icon');
-
-                header.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-
-                    // Close all other items
-                    accordionItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            const otherArrow = otherItem.querySelector('.arrow-icon');
-                            otherArrow.style.transform = 'rotate(0deg)';
-                        }
-                    });
-
-                    // Toggle the current item's active state and rotate the arrow
-                    item.classList.toggle('active');
-                    if (item.classList.contains('active')) {
-                        arrowIcon.style.transform = 'rotate(180deg)';
-                    } else {
-                        arrowIcon.style.transform = 'rotate(0deg)';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </head>
 
 <body>
+
+    <div class="marquee-container">
+        <!-- The inner element that contains the duplicated content and is animated -->
+        <div class="marquee-content">
+            <!-- First block of content -->
+            <span style="display: inline-block; flex-shrink: 0;">Exclusive Launch Offer: Flat 50% OFF for a limited time
+                only! World's Best-Selling Body Wash.</span>
+            <!-- Duplicated block for a seamless loop -->
+            <span style="display: inline-block; flex-shrink: 0;">Exclusive Launch Offer: Flat 50% OFF for a limited time
+                only! World's Best-Selling Body Wash.</span>
+            <!-- Duplicated block for a seamless loop -->
+            <span style="display: inline-block; flex-shrink: 0;">Exclusive Launch Offer: Flat 50% OFF for a limited time
+                only! World's Best-Selling Body Wash.</span>
+            <!-- Duplicated block for a seamless loop -->
+            <span style="display: inline-block; flex-shrink: 0;">Exclusive Launch Offer: Flat 50% OFF for a limited time
+                only! World's Best-Selling Body Wash.</span>
+        </div>
+    </div>
 
     <header class="header">
         <div class="header-logo-container">
@@ -82,6 +71,114 @@
     </header>
 
     <main>
+
+
+        <section class="silder-body">
+            <div class="slider-container">
+
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-content-wrapper">
+                        <!-- Text Content (Left side) -->
+                        <div class="text-content-section">
+                            <div class="text-content-inner">
+                                <h2 class="slider-title">First Product Headline</h2>
+                                <p class="slider-description">
+                                    This is a description for the first product. You can replace this text with your own
+                                    content, describing the features and benefits of your item.
+                                </p>
+                                <button class="cta-button">
+                                    SHOP NOW
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Image (Right side) -->
+                        <div class="image-content">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-content-wrapper">
+                        <!-- Text Content (Left side) -->
+                        <div class="text-content-section">
+                            <div class="text-content-inner">
+                                <h2 class="slider-title">Second Product Headline</h2>
+                                <p class="slider-description">
+                                    This is a description for the second product. You can customize this content to
+                                    highlight the unique selling points of your product.
+                                </p>
+                                <button class="cta-button">
+                                    DISCOVER MORE
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Image (Right side) -->
+                        <div class="image-content">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-content-wrapper">
+                        <!-- Text Content (Left side) -->
+                        <div class="text-content-section">
+                            <div class="text-content-inner">
+                                <h2 class="slider-title">Third Product Headline</h2>
+                                <p class="slider-description">
+                                    This is a description for the third product. Feel free to edit this section with
+                                    your own compelling product details.
+                                </p>
+                                <button class="cta-button">
+                                    BUY NOW
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Image (Right side) -->
+                        <div class="image-content">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="nav-arrow" id="prev-btn">
+                    <i class="fas fa-chevron-left fa-2x"></i>
+                </div>
+                <div class="nav-arrow" id="next-btn">
+                    <i class="fas fa-chevron-right fa-2x"></i>
+                </div>
+
+                <!-- Dots Navigation -->
+                <div class="dot-container">
+                    <span class="dot active-dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-container">
+
+            <!-- Heading -->
+            <h1 class="font-playfair heading">
+                Mind, Body & Soul care routine
+            </h1>
+
+            <!-- Paragraph text -->
+            <p class="paragraph">
+                Astrology is not just about stars and planets, it also encompasses various rituals and practices
+                believed to harness the cosmic energy for our benefit. Our couture blends crafted to purify energy,
+                refine your aura, and awaken mind, body, and spirit in a single, luminous experience.
+            </p>
+
+        </section>
+
         <section class="product-section">
 
             <h1 class="section-title">
@@ -90,7 +187,7 @@
 
             <div class="product-container">
 
-                <div class="product-card">
+                <div  class="product-card">
                     <img src="./assets/product-1.jpg" alt="Aura Enhancer Bodywash" class="card-image" />
 
                     <h2 class="card-title">
@@ -103,7 +200,7 @@
                     </p>
 
                     <div class="cta-button-container">
-                        <button class="cta-button">
+                        <button onclick="location.href='./product.html'" class="cta-button">
                             GET FOR YOURSELF
                         </button>
                     </div>
@@ -122,7 +219,7 @@
                     </p>
 
                     <div class="cta-button-container">
-                        <button class="cta-button">
+                        <button onclick="location.href='./product.html'" class="cta-button">
                             GET FOR YOURSELF
                         </button>
                     </div>
@@ -143,6 +240,36 @@
                 </p>
             </div>
         </div>
+
+
+        <div class="section-4-container">
+            <!-- Left column for the text content -->
+            <div class="section-4-text-content">
+                <h3 class="section-4-subtitle">About Mandale:</h3>
+                <h1 class="section-4-headline">
+                    From Inner Calling to Ritual Renaissance
+                </h1>
+                <p class="section-4-description">
+                    Mandale was born from an inner call to elevate everyday care into an energy-infused ceremony. What
+                    began with our seven-day Aura Enhancer body washes now unfolds into Crystal-infused Body Oils and a
+                    growing constellation of celestial formulations—each marrying ancestral ritual, high-science
+                    botanicals, and planetary rhythm to serve mind, body, and aura. Whether you lather or lavish on,
+                    every Mandale ritual purifies skin, recalibrates energy, and surrounds you in modern luxury
+                    soul-care.
+                </p>
+                <button class="section-4-cta-button">
+                    DISCOVER OUR PHILOSOPHY
+                </button>
+            </div>
+
+            <!-- Right column for the image -->
+            <div class="section-4-image-container">
+                <img src="./assets/gift-box.gif"
+                    alt="A white box containing various small bottles of cosmetic products, arranged neatly."
+                    class="section-4-product-image">
+            </div>
+        </div>
+
         <div class="review-container">
 
             <section class="commitments-section">
@@ -151,31 +278,31 @@
                 <div class="commitments-grid">
                     <div class="commitment-item">
                         <img src="./assets/a.png" alt="Vegan Icon" class="commitment-icon">
-                        <p class="commitment-title">100% Vegan</p>
-                        <p>Supports sustainability and animal welfare.</p>
+                        <pre class="commitment-title">100% Vegan</pre>
+                        <p class="commitment-description">Supports sustainability and animal welfare.</p>
                     </div>
                     <div class="commitment-item">
                         <img src="./assets/b.png" alt="Vegan Icon" class="commitment-icon">
 
-                        <h4>IFRA Certified Fragrances</h4>
-                        <p>Brings safe, luxurious aroma without compromise.</p>
+                        <pre class="commitment-title">IFRA Certified Fragrances</pre>
+                        <p class="commitment-description">Brings safe, luxurious aroma without compromise.</p>
                     </div>
                     <div class="commitment-item">
                         <img src="./assets/c.png" alt="Vegan Icon" class="commitment-icon">
 
-                        <h4>Clean Formulation</h4>
-                        <p>Made with safe, non-toxic, and skin-friendly ingredients.</p>
+                        <pre class="commitment-title">Clean Formulation</pre>
+                        <p class="commitment-description">Made with safe, non-toxic, and skin-friendly ingredients.</p>
                     </div>
                     <div class="commitment-item">
                         <img src="./assets/d.png" alt="Vegan Icon" class="commitment-icon">
 
-                        <h4>Made In India</h4>
-                        <p>A land of timeless traditions and vibrant cultures.</p>
+                        <pre class="commitment-title">Made In India</pre>
+                        <p class="commitment-description">A land of timeless traditions and vibrant cultures.</p>
                     </div>
                     <div class="commitment-item">
                         <img src="./assets/e.png" alt="Vegan Icon" class="commitment-icon">
-                        <h4>100% Naturally Derived Extracts</h4>
-                        <p>Made from pure plant, fruit, and botanical sources.</p>
+                        <pre class="commitment-title">100% Naturally Derived Extracts</pre>
+                        <p class="commitment-description">Made from pure plant, fruit, and botanical sources.</p>
                     </div>
                 </div>
             </section>
@@ -249,8 +376,6 @@
 
         </div>
 
-
-        
         <div class="faq-container">
             <header class="faq-header">
                 <h3 class="faq-title">FAQ's</h3>
@@ -347,9 +472,82 @@
             </section>
         </div>
 
+        <div class="blog-container">
+            <!-- Main Header Section -->
+            <div class="blog-header">
+                <p class="blog-header-title">Your New Journal</p>
+                <p class="blog-header-subtitle">Skincare Blogs</p>
+            </div>
 
+            <!-- Skincare Blogs Section -->
+            <section class="blog-posts">
+                <div class="grid-container">
+                    <!-- Blog Post 1 -->
+                    <a href="#" class="blog-card">
+                        <img src="./assets/skin-1.jpg" alt="Applying cream to hands" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <p class="date">APRIL 3, 2025</p>
+                            <p class="skin-title">Why Your Skin Deserves 100% Natural Ingredients</p>
+                            <p class="description">That's why choosing 100% natural ingredients is more than just a
+                                trend; it's an act of care and protection.</p>
+                        </div>
+                    </a>
 
-        
+                    <!-- Blog Post 2 -->
+                    <a href="#" class="blog-card">
+                        <img src="./assets/skin-2.jpg" alt="Bottles of oil and lit candles" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <p class="date">MAY 6, 2025</p>
+                            <p class="skin-title">From Ancient Rituals to Modern Self-Care: The...</p>
+                            <p class="description">Skincare has always been more than surface deep. In ancient times,
+                                rituals using natural clays, oils, herbs...</p>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post 3 -->
+                    <a href="#" class="blog-card">
+                        <img src="./assets/skin-3.jpg" alt="Person receiving a foot massage" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <p class="date">APRIL 1, 2025</p>
+                            <p class="skin-title">The Science of Aura Cleansing: How Mandala...</p>
+                            <p class="description">While aura cleansing is often rooted in spiritual and energetic
+                                traditions, Mandala brings a thoughtful...</p>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post 4 -->
+                    <a href="#" class="blog-card">
+                        <img src="./assets/skin-4.jpg" alt="Skincare products on a shelf with branches"
+                            class="blog-card-image">
+                        <div class="blog-card-content">
+                            <p class="date">JUNE 7, 2025</p>
+                            <p class="skin-title">Let your daily skincare ritual be a soft pause, where...</p>
+                            <p class="description">As you cleanse away the day, apply nourishing oils, or gently press
+                                in serums, you're not just tending...</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Pagination Dots -->
+            <div class="pagination-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!-- Social Media Section -->
+            <section class="social-section">
+                <p class="social-text">Show some love on Social</p>
+                <div class="grid-container">
+                    <img src="./assets/social-1.jpg" alt="Lit candle and flowers" class="social-image">
+                    <img src="./assets/social-2.jpg" alt="Person closing their eyes in a spa" class="social-image">
+                    <img src="./assets/social-3.jpg" alt="Stack of towels with a flower" class="social-image">
+                    <img src="./assets/social-4.jpg" alt="Person applying serum to their face" class="social-image">
+                </div>
+            </section>
+
+        </div>
 
 
     </main>

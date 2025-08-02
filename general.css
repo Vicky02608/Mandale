@@ -5,6 +5,425 @@ body {
     margin: 0;
 }
 
+.marquee-container {
+    width: 100%;
+    background-color: #d6d3d1;
+    color: #292524;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    color: #21201C;
+    /* Using vertical padding */
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/*
+         * Define the keyframes for the scrolling animation.
+         * The animation moves the element from 100% of its own width to the left (off-screen)
+         * to its original position (0%). This creates the "left-to-right" movement.
+         */
+@keyframes scroll-left-to-right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/*
+         * This class defines the container for the content that will be animated.
+         * The `animation` property applies the `scroll-left-to-right` keyframes.
+         * It runs infinitely, at a linear speed, and is paused by default.
+         * The `white-space: nowrap;` ensures the text stays on a single line.
+         * The `display: flex` and `gap` properties help in creating a seamless loop by placing
+         * duplicate content side-by-side with spacing.
+         */
+.marquee-content {
+    animation-name: scroll-left-to-right;
+    animation-duration: 40s;
+    /* Adjust duration to control speed */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    white-space: nowrap;
+    display: flex;
+    gap: 2rem;
+    /* Spacing between the duplicated text blocks */
+}
+
+/*
+         * Pauses the animation when the user hovers over the banner container.
+         */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+
+
+
+
+
+
+
+
+
+/*Slider*/
+.silder-body {
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #4b5563;
+    /* Corresponds to Tailwind's text-gray-800 */
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Individual slide */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider-title {
+    font-size: 18px;
+    /* Corresponds to text-2xl */
+    font-weight: 500;
+    color: #21201C;
+    /* Corresponds to text-gray-900 */
+    font-family: 'Gazpacho';
+    line-height: 60px;
+}
+
+.slider-description {
+    font-size: 18px;
+    /* Corresponds to text-2xl */
+    font-weight: 400;
+    color: #666666;
+    /* Corresponds to text-gray-900 */
+    font-family: 'Segoe UI';
+    line-height: 26px;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Flexbox for slide content */
+.slide-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url('./assets/slider-1.jpg');
+    background-size: cover;
+}
+
+/* Text content section */
+.text-content-section {
+    flex: 1;
+    padding: 2rem;
+    /* Corresponds to p-8 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image content section */
+.image-content-section {
+    flex: 1;
+    /* Corresponds to p-8 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.image-content {
+    flex: 1;
+    /* Corresponds to p-8 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Inner content container for text */
+.text-content-inner {
+    max-width: 42rem;
+    /* Corresponds to max-w-2xl */
+    text-align: center;
+}
+
+/* Headlines */
+.text-content-inner h2 {
+    font-size: 2.25rem;
+    /* Corresponds to text-3xl */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    /* Corresponds to mb-4 */
+}
+
+/* Paragraphs */
+.text-content-inner  {
+    font-size: 1rem;
+    /* Corresponds to text-base */
+    color: #4b5563;
+    /* Corresponds to text-gray-600 */
+    margin-bottom: 2rem;
+    /* Corresponds to mb-8 */
+}
+
+/* Buttons */
+.cta-button {
+    background-color: #FAF7EE;
+    color: #B8860A;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    /* Corresponds to rounded-full */
+    border: 1px solid #d1d5db;
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+.cta-button:hover {
+    background-color: #f3f4f6;
+}
+
+/* Hexagonal image container */
+.clip-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 32rem;
+    /* Corresponds to max-w-lg */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #4b5563;
+    transition: color 300ms;
+    z-index: 10;
+}
+
+.nav-arrow:hover {
+    color: #1f2937;
+}
+
+#prev-btn {
+    left: 1rem;
+}
+
+#next-btn {
+    right: 1rem;
+}
+
+/* Dots Navigation */
+.dot-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    /* Corresponds to space-x-2 */
+}
+
+.dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #9ca3af;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.dot:hover {
+    background-color: #6b7280;
+}
+
+.dot.active-dot {
+    background-color: #4b5563;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .slide-content-wrapper {
+        flex-direction: row;
+    }
+
+    .text-content-section {
+        padding: 4rem;
+        /* Corresponds to p-16 */
+    }
+
+    .image-content-section {
+        padding: 4rem;
+        /* Corresponds to p-16 */
+    }
+
+    .text-content-inner {
+        text-align: left;
+    }
+
+    .text-content-inner h2 {
+        font-size: 3rem;
+        /* Corresponds to md:text-5xl */
+    }
+}
+
+@media (min-width: 1024px) {
+    .text-content-section {
+        padding: 6rem;
+        /* Corresponds to p-24 */
+    }
+
+    .image-content-section {
+        padding: 6rem;
+        /* Corresponds to p-24 */
+    }
+
+    .text-content-inner h2 {
+        font-size: 3.75rem;
+        /* Corresponds to lg:text-6xl */
+    }
+
+    .text-content-inner  {
+        font-size: 1.125rem;
+        /* Corresponds to lg:text-lg */
+    }
+
+    .clip-hexagon {
+        max-width: 36rem;
+        /* Corresponds to lg:max-w-xl */
+    }
+
+    #prev-btn {
+        left: 2rem;
+    }
+
+    #next-btn {
+        right: 2rem;
+    }
+}
+
+/* Slider container */
+
+
+.text-term {
+    font-family: 'Gazpacho';
+    background-color: #fcfaf5;
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+}
+
+/* Custom fonts for specific elements */
+.font-playfair {
+    font-family: 'Gazpacho';
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+/* Main content section styling */
+.content-container {
+    max-width: 64rem;
+    /* Equivalent to max-w-3xl in Tailwind */
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 1rem;
+    /* Adjust padding for different screen sizes */
+}
+
+/* Heading styles */
+.heading {
+    font-size: 30px;
+    /* Base font size */
+    font-weight: 500;
+    color: #21201C;
+}
+
+/* Responsive typography for heading */
+@media (min-width: 640px) {
+
+    /* sm breakpoint */
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* md breakpoint */
+    .heading {
+        font-size: 3.75rem;
+    }
+}
+
+/* Paragraph styles */
+.paragraph {
+    font-size: 18px;
+    /* Base font size */
+    font-weight: 400;
+    font-family: Arial;
+    color: #666666;
+    /* Equivalent to max-w-2xl in Tailwind */
+}
+
+/* Responsive typography for paragraph */
+@media (min-width: 640px) {
+
+    /* sm breakpoint */
+    .paragraph {
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* md breakpoint */
+    .paragraph {
+        font-size: 1.25rem;
+    }
+}
+
+
+
+
 /* Main Section Container */
 .product-section {
     max-width: 1280px;
@@ -68,19 +487,18 @@ body {
 
 /* Card Title */
 .card-title {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 500;
     color: #B8860A;
-    margin-bottom: 0.5rem;
     text-align: center;
     font-family: 'Gazpacho';
+    line-height: 100%;
 }
 
 /* Card Description */
 .card-description {
-    font-size: 1rem;
+    font-size: 18px;
     color: #666666;
-    margin-bottom: 1rem;
     text-align: center;
     font-weight: 400;
     font-family: 'Arial';
@@ -89,21 +507,22 @@ body {
 /* Call-to-action Button */
 .cta-button-container {
     text-align: center;
+    color: #B8860A;
+
 }
 
 .cta-button {
-    background-color: #B8860A;
-    color: #ffffff;
+    background-color: #FAF7EE;
+    color: #B8860A;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     font-size: 0.875rem;
 }
 
-.cta-button:hover {
+/* .cta-button:hover {
     background-color: #a88a2a;
 }
 
@@ -111,7 +530,7 @@ body {
     outline: 2px solid transparent;
     outline-offset: 2px;
     box-shadow: 0 0 0 2px rgba(192, 154, 48, 0.5);
-}
+} */
 
 .banner-container {
     /* Mimicking the background texture from the image */
@@ -175,22 +594,21 @@ body {
     padding: 4rem 1.5rem;
     text-align: center;
 }
-
-
 /* --- Thoughtful Commitments Section Styles --- */
 .commitments-section {
     background-color: #fff;
     padding: 4rem 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 4rem;
+    margin-bottom: 4rem; /* Consider if this is needed, or if it should be part of a larger container's spacing */
 }
 
 .commitments-grid {
     display: grid;
+    /* This makes the grid responsive. It creates as many columns as will fit, with a minimum width of 200px. */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 2rem; /* Creates space between grid items */
+    margin-top: 2rem; /* Consider if this is needed, or if the padding on the section is enough */
 }
 
 .commitment-item {
@@ -198,41 +616,35 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1.5rem;
-    transition: transform 0.2s ease-in-out;
-}
-
-.commitment-item:hover {
-    transform: translateY(-5px);
-}
-
-.commitment-item svg {
-    width: 80px;
-    height: 80px;
-    stroke: #c8a379;
-    /* Golden color from image */
-    fill: none;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    margin-bottom: 1rem;
-}
-
-.commitment-item h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #55331e;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-
-.commitment-item p {
-    font-size: 0.875rem;
-    color: #777;
 }
 
 .commitment-title {
     color: #B8860A;
+    font-family: 'Gazpacho', sans-serif; /* Add a fallback font */
+    font-weight: 500;
+    line-height: 1.5; /* Changed from 100% for better readability */
+    font-size: 20px;
+}
+
+.commitment-description {
+    color: #666666;
+    font-family: 'Arial', sans-serif; /* Add a fallback font */
+    font-weight: 400;
+    line-height: 1.5; /* Changed from 100% for better readability */
+    text-align: center;
+    font-size: 14px;
+    margin-top: 0.5rem; /* Add some space between the title and description */
+}
+
+/* Add media queries to fine-tune the layout for smaller screens. */
+@media (max-width: 480px) {
+    .commitments-grid {
+        grid-template-columns: 1fr; /* Stack items vertically on very small screens */
+    }
+
+    .commitments-section {
+        padding: 2rem 1rem; /* Reduce padding on smaller screens */
+    }
 }
 
 /* --- Reviews/Testimonials Section Styles --- */
@@ -241,7 +653,7 @@ body {
     background-color: #fcfbf8;
 }
 
-.reviews-section .pre-heading {
+.reviews-section  {
     font-family: 'Inter', sans-serif;
     color: #c8a379;
     /* Golden color from image */
@@ -252,26 +664,39 @@ body {
     margin-bottom: 0;
 }
 
-.reviews-section .main-heading {
+.pre-heading{
+    font-family: 'Segoe UI';
+    color: #B8860A;
+    /* Golden color from image */
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.reviews-section {
     margin-top: 0.5rem;
     font-family: 'Gazpacho';
 }
 
+.main-heading {
+    font-size: 30px;
+    font-weight: 500;
+    color: #21201C;
+    font-family: 'Gazpacho';
+    line-height: 100%;
+}
+
 .reviews-carousel {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
     align-items: center;
     justify-content: center;
 }
 
 .review-card {
     background-color: #fff;
-    padding: 2.5rem;
-    text-align: left;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     height: 100%;
     /* Ensure cards have the same height */
     display: flex;
@@ -289,10 +714,8 @@ body {
 }
 
 .review-text {
-    font-size: 1rem;
-    font-style: italic;
     color: #444;
-    margin-bottom: 1.5rem;
+
 }
 
 .reviewer-info {
@@ -380,7 +803,7 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
-        font-family: 'Arial';
+    font-family: 'Arial';
 
     margin-bottom: 10px;
 }
@@ -462,7 +885,6 @@ body {
 .accordion-content p {
     margin: 0;
     font-size: 16px;
-    line-height: 1.6;
     color: #757575;
 }
 
@@ -481,7 +903,322 @@ body {
         padding: 15px 0;
     }
 
-    .accordion-content p {
-        font-size: 0.9rem;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blog-header {
+    text-align: center;
+
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+/* --- Blog Posts & Social Grid Layouts --- */
+.grid-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 2rem;
+}
+
+.social-section h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-color-primary);
+}
+
+/* --- Blog Card Styling --- */
+.blog-card {
+    background-color: var(--secondary-bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.blog-header-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: #B8860A;
+    font-family: 'Arial';
+}
+
+.blog-header-subtitle {
+    font-size: 30px;
+    color: #666666;
+    font-family: 'Gazpacho';
+    font-weight: 500;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.blog-card-content {
+    padding: 1.5rem;
+}
+
+.blog-card-content {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0;
+}
+
+.date {
+    font-size: 10px;
+    color: #666666;
+    font-weight: 500;
+    font-family: 'Montserrat';
+}
+
+.skinTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #B8860A;
+    font-family: 'Gazpacho';
+    line-height: 26px;
+}
+
+.blogCardContent h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+}
+
+.blogCardContent {
+    font-size: 0.9rem;
+    color: var(--text-color-secondary);
+    margin: 0;
+}
+
+.description {
+    font-size: 16px;
+    font-family: 'Arial';
+    font-weight: 400;
+    color: #666666;
+    line-height: 22px;
+
+}
+
+
+/* --- Social Image Styling --- */
+.social-image {
+    width: 100%;
+    height: 250px;
+    /* Consistent height for grid */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Pagination Dots --- */
+.pagination-dots {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--light-grey);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dot.active {
+    background-color: var(--accent-color);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header h2 {
+        font-size: 2rem;
+    }
+
+    .grid-container {
+        gap: 1.5rem;
+    }
+
+    .blog-card-content {
+        padding: 1rem;
+    }
+
+    .blog-card-content h4 {
+        font-size: 1rem;
+    }
+}
+
+
+
+.social-text {
+    font-size: 30px;
+    font-weight: 500;
+    color: #21201C;
+    font-family: 'Gazpacho';
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section -4 for the layout */
+.section-4-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically by default (for mobile) */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styling for the text and image sections */
+.section-4-text-content,
+.section-4-image-container {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+/* Typography styling */
+.section-4-subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    color: #B8860A;
+
+    font-family: 'Gazpacho';
+}
+
+.section-4-headline {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    font-family: 'Gazpacho';
+}
+
+.section-4-description {
+    font-size: 18px;
+    color: #666666;
+    font-family: 'Arial';
+    font-weight: 400;
+
+}
+
+/* Call-to-action button styling */
+.section-4-cta-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #F5EEDC;
+    color: #B8860A;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.section-4-cta-button:hover {
+    background-color: #F5EEDC;
+}
+
+/* Image container and image styling */
+.section-4-image-container {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.section-4-product-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Media query for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+
+    .section-4-container {
+        flex-direction: row;
+        /* Arrange items horizontally */
+        align-items: flex-start;
+        gap: 4rem;
+        /* Add space between columns */
+    }
+
+    .section-4-text-content {
+        flex: 1;
+        /* Take up remaining space */
+        padding: 1.5rem 0;
+        /* Remove side padding for better alignment */
+    }
+
+    .section-4-image-container {
+        flex: 1;
+        /* Take up remaining space */
+        padding: 1.5rem 0;
+    }
+
+    .section-4-headline {
+        font-size: 4rem;
     }
 }
